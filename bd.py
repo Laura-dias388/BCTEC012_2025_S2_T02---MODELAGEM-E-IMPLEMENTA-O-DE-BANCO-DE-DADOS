@@ -1,20 +1,31 @@
+
 import mysql.connector
 
+
 conexao = mysql.connector.connect(
-  host = 'localhost',
-  user = 'root',
-  password = '',
-  database = 'aula_pratica_1'
+
+   host='localhost',
+   user='root',
+   password='',
+   database='aula_pratica_1'
 )
 
-cursor = conexao.cursor()
+cursor= conexao.cursor()
+nome='Maria'
+cpf='078.779.789-45'
+endereco= 'Raua c'
+cidade = 'bh'
+numero=20
 
-comando = f"SELECT * FROM cliente"
+#comando= f'select * from cliente'
+comando= f'insert into cliente (nome, cpf, endereco, cidade, numero) values ("{nome}", "{cpf}", "{endereco}", "{cidade}", {numero})'
+
 cursor.execute(comando)
-resultado = cursor.fetchall()
-print(resultado)
+conexao.commit()
 
-for cliente in resultado:
-  print(cliente[1])
+#resultado = cursor.fetchall()
+
+#for cliente in resultado:
+#    print(cliente)
 
 conexao.close()

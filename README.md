@@ -18,6 +18,22 @@ Aqui serão adicionados os scripts e configurações necessários para estabelec
 
 ---
 
+# CRUD - Create, Read, Update, Delete
+
+CRUD é o acrônimo de quatro operações fundamentais usadas em sistemas de banco de dados e em aplicações que manipulam informações.  
+Essas operações são **Criar, Ler, Atualizar e Deletar** registros.
+
+---
+
+## 🔹 Operações CRUD
+
+### 1. Create (Criar)
+- Responsável por **inserir novos dados** no sistema/banco de dados.
+- Exemplo em SQL:
+  ```sql
+  INSERT INTO usuarios (nome, email) VALUES ('Jhon', 'jhon@email.com');
+
+
 ## 🛠️ Tecnologias utilizadas
 - **Python 3.x**
 - **MariaDB / MySQL** (ajuste conforme o banco que estiver usando)
