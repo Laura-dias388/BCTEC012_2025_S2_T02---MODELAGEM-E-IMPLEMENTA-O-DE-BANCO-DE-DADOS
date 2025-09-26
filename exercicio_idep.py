@@ -7,14 +7,21 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+print("1) Selecionar todos os registros do ano de “2019”")
 
 cursor= conexao.cursor()
-comando = "SELECT * FROM ideb WHERE ano = 2019;"
 
-cursor.execute(comando)
+year = "SELECT * FROM `ideb` WHERE ano = '2019'"
+
+cursor.execute(year)
+cont = 0
 registros = cursor.fetchall()
 for linha in registros:
-    print(linha)
+    cont += 1
+    print("-=" * 50)
+    print(f"Registros do ano de 2019", linha)
+print("=" * 50)    
+print(f"Foram encontrados", cont, "registros do ano de 2019")
+print("=" * 50) 
 
-conexao.commit()
 conexao.close()
