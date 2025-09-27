@@ -7,8 +7,9 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
-print("=/" * 80)
+print("=/" * 50)
 print("12) Encontre os maiores valores para “projecao” para cada tipo de rede")
 
 

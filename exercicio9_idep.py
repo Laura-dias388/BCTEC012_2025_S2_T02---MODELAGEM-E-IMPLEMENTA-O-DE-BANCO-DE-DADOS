@@ -7,6 +7,7 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
 print("=/" * 50)
 print("9) Faça uma média dos valores para o “indicador_rendimento”")

@@ -7,6 +7,8 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
+print("=/" * 50)
 print("1) Selecionar todos os registros do ano de “2019”")
 
 cursor= conexao.cursor()

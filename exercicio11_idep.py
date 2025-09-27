@@ -7,8 +7,9 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
-print("=/" * 80)
+print("=/" * 50)
 print("11) Encontre o ano que teve o maior valor para o ideb")
 
 value_year = "SELECT ano, ideb FROM ideb ORDER BY ideb DESC LIMIT 1"  

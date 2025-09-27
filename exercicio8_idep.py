@@ -7,8 +7,9 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
-print("=/" * 80)
+print("=/" * 50)
 print("8) Selecione o menor valor para “nota_saeb_lingua_portuguesa”")
 
 minor_note = "SELECT nota_saeb_lingua_portuguesa FROM `ideb`;"

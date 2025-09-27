@@ -7,9 +7,10 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
 
-print("=/" * 80)
+print("=/" * 50)
 print("6) Encontre o valor da média dos valores para o “indicador_rendimento”")
 
 yield_indicator = "SELECT indicador_rendimento FROM `ideb`;"

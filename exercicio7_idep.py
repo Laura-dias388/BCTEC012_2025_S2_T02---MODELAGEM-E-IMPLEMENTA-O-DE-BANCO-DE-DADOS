@@ -7,8 +7,10 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
-print("=/" * 80)
+
+print("=/" * 0)
 print("7) Selecione o maior valor para “nota_saeb_matematica”")
 
 highest_grade = "SELECT nota_saeb_matematica FROM `ideb`;"

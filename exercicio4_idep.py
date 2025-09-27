@@ -7,9 +7,10 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
+
 cursor= conexao.cursor()
 
-print("=/" * 80)
+print("=/" * 50)
 print("4) Selecionar todos os registros em que o “anos_escolares” seja igual a “finais (6-9)”")
 
 school_year = "SELECT * FROM `ideb` WHERE RIGHT(ano, 1) IN ('6','7','8','9')"

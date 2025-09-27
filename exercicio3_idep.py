@@ -7,9 +7,9 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
-cursor= conexao.cursor()
 
-print("=/" * 80)
+cursor= conexao.cursor()
+print("=/" * 50)
 print("3) Selecionar todos os registros do ensino “fundamental”")
 
 

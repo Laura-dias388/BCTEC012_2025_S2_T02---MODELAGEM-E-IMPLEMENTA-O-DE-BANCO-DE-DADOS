@@ -7,7 +7,8 @@ conexao = mysql.connector.connect(
    password='',
    database='idep_bd'
 )
-print("=/" * 80)
+
+print("=/" * 50)
 print("2) Selecionar todos os registros da rede “privada”")
 
 cursor= conexao.cursor()
