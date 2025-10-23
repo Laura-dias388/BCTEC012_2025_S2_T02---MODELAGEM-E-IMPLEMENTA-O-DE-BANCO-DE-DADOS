@@ -11,7 +11,7 @@ conexao = mysql.connector.connect(
 cursor= conexao.cursor()
 
 print("=/" * 50)
-print("5) Selecionar todos os registros em que a taxa_aprovacao seja maiores que 80.0")
+print("5) Selecionar todos os registros em que a taxa_aprovacao sejam maiores que 80.0")
 
 pass_rate = "SELECT * FROM `ideb` WHERE taxa_aprovacao > 80"
 cursor.execute(pass_rate)
