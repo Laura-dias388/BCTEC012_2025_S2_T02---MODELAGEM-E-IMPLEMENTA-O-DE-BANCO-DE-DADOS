@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import mysql.connector
 
-# Conexão com o banco de dados
 conexao = mysql.connector.connect(
    host="127.0.0.1",
    user='root',
@@ -11,6 +10,16 @@ conexao = mysql.connector.connect(
 )
 
 cursor  = conexao.cursor()
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS coordenada (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero_equacao INT,
+    coordenada_x FLOAT,
+    coordenada_y FLOAT
+)
+""")
+
 numero_aleatorio = np.linspace(0, 80, 400) # Intervalo de x entre 0 e 80 kg/ha
 
 numeros = [
@@ -36,9 +45,7 @@ for n in numeros:
     valores = (numero_equacao, x, y)
     cursor.execute(comando, valores)
 
-
 conexao.commit()
 
-  
 conexao.close()
 
