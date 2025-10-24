@@ -2,86 +2,51 @@
 ## Disciplina: Modelagem e Implementação de Banco de Dados  
 **Professor:** Fischer Ferreira  
 
+# 🌾 Módulo 3 — Aula Prática 2   
+**Universidade Federal de Itajubá (UNIFEI)**   
+ 
 ---
 
-## 🗂️ Sobre o Repositório
-Este repositório reúne anotações, exercícios, exemplos e projetos desenvolvidos durante a disciplina **Modelagem e Implementação de Banco de Dados** no curso de **Bacharelado em Ciência e Tecnologia (BCTec)**.  
-O objetivo é registrar todo o conteúdo visto em aula, incluindo conceitos teóricos, práticas com SGBDs e exemplos de aplicações reais.
+## 🧠 Descrição
 
----
+Este projeto tem como objetivo **inserir informações em uma base de dados utilizando Python**, simulando o comportamento da **produtividade agrícola em função da quantidade de fertilizante aplicado**.  
 
-## 📖 Conteúdo do Módulo 1 — Introdução a Banco de Dados
+A produtividade segue uma **curva parabólica**, modelada por uma **equação do segundo grau** da forma:
 
-### 1️⃣ Conceitos Iniciais
-- O que é um **banco de dados**.
-- Diferença entre armazenar dados em arquivos comuns e utilizar um **SGBD**.
-- Motivação para estudar bancos de dados.
+\[
+P(x) = ax^2 + bx + c
+\]
 
-### 2️⃣ Problemas na Manipulação Direta de Dados
-- **Inconsistência de dados**: formatos não respeitados.
-- **Redundância de dados**: duplicação desnecessária.
-- **Falta de controle de concorrência**: alterações simultâneas.
-- **Dificuldade de segurança e privacidade**.
-- **Integridade dos dados**: restrições, valores únicos, sem valores nulos.
-- **Manutenção complexa** e dificuldade em **backup e recuperação**.
+onde:
+- **P(x)** → produtividade (toneladas por hectare)  
+- **x** → quantidade de fertilizante (kg/ha)  
+- **a, b, c** → coeficientes que determinam a forma da curva  
 
-### 3️⃣ Solução: Sistema Gerenciador de Banco de Dados (SGBD)
-- Coleção de programas que permite criar, manter e manipular um banco de dados.
-- Características:
-  - Controle de redundância
-  - Compartilhamento multiusuário
-  - Controle de acesso
-  - Representação de relacionamentos complexos
-  - Tolerância a falhas e recuperação
-- Exemplos de SGBD:
-  - **Relacionais (SQL)**: MySQL, PostgreSQL, Oracle.
-  - **NoSQL**: MongoDB, Cassandra.
-  - **Embarcados**: SQLite.
-
-### 4️⃣ Quando Usar (ou Não) um SGBD
-- **Não usar**:
-  - Aplicações simples e estáveis.
-  - Sistemas embarcados com pouco armazenamento.
-  - Nenhum acesso concorrente.
-- **Usar**:
-  - Necessidade de múltiplos usuários.
-  - Controle de integridade, segurança e concorrência.
-  - Estrutura de dados complexa.
-
-### 5️⃣ Exemplo de Aplicação de um SGBD
-- **Banco de Dados: UNIVERSIDADE**
-  - Registros: ALUNO, DISCIPLINA, TURMA, HISTÓRICO ESCOLAR, PRÉ-REQUISITO.
-  - Relacionamentos entre registros.
-  - Exemplos de consultas:
-    - Listar disciplinas e notas.
-    - Listar alunos que fizeram "Banco de Dados".
-    - Listar pré-requisitos da disciplina.
-  - Exemplos de atualizações:
-    - Alterar nome de aluno.
-    - Criar nova turma.
-    - Inserir nota em uma disciplina.
+O desafio consiste em **analisar 10 diferentes equações** e determinar **qual delas apresenta a maior produtividade máxima**, considerando uma faixa sustentável de fertilizante entre **20 e 80 kg/ha**.
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas
-- **SGBD:** MariaDB / MySQL
-- **Modelagem:** MySQL Workbench, Draw.io
-- **Editor:** VS Code
-- **Controle de Versão:** Git e GitHub
+## 🎯 Objetivos
+
+1. Calcular a produtividade para valores de `x` entre 0 e 80 kg/ha.  
+2. Armazenar as coordenadas `(x, y)` no banco de dados `plantacao_agricola`.  
+3. Ler os dados da base e plotar as curvas utilizando `matplotlib`.  
+4. Identificar:
+   - A equação que alcança a **maior produtividade máxima**;
+   - A posição do **vértice** da parábola (idealmente entre 20 e 80 kg/ha);
+   - A **melhor equação** segundo os critérios definidos.
 
 ---
 
-## 📂 Estrutura Sugerida do Repositório
+## 🗄️ Estrutura do Banco de Dados
 
----
+Crie um banco de dados chamado `plantacao_agricola` e execute os comandos SQL abaixo:
 
-## 📌 Observações
-Este repositório é para **fins educacionais** e acompanha o progresso da disciplina.  
-Sugestões e melhorias são bem-vindas.
-
----
-
-## ✍️ Autor
-**Laura Dias**  
-Estudante de **Bacharelado em Ciência e Tecnologia** na **UNIFEI**  
-📍 Itajubá - MG  
+```sql
+CREATE TABLE coordenada (
+  id_coordenada INT(11) NOT NULL AUTO_INCREMENT,
+  numero_equacao INT(11) NOT NULL,
+  coordenada_x INT(11) NOT NULL,
+  coordenada_y INT(11) NOT NULL,
+  PRIMARY KEY (id_coordenada)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
