@@ -45,6 +45,7 @@ for n in numeros:
     valores = (numero_equacao, x, y)
     cursor.execute(comando, valores)
 
+
 conexao.commit()
 
 conexao.close()
