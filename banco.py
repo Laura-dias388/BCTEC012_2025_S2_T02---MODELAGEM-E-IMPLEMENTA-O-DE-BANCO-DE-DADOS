@@ -50,9 +50,7 @@ CREATE TABLE IF NOT EXISTS CONSERTO (
     FOREIGN KEY (NumAp) REFERENCES APARELHO(NumAp)
 )""")
 
-comando = "INSERT INTO FUNCIONARIO(NumFunc, Nome, Cargo) VALUES (%s, %s, %s)"
-valores = (1, "Marco", "Trainee")
-cursor.execute(comando, valores)
+
 
 conexao.commit()
 cursor.close()
